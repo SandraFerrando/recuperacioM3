@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block titol %}Encanteris{% endblock %}
+
+{% block contingut %}
+    <h1>Llista d'encanteris</h1>
+    <ul>
+        {% for e in encanteris %}
+            <li><strong>{{ e.name }}</strong>: {{ e.description or "Sense descripció" }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

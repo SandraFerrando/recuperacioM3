@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block titol %}Personatges{% endblock %}
+
+{% block contingut %}
+    <h1>Llista de personatges</h1>
+    <ul>
+        {% for p in personatges %}
+            <li><a href="/personatge/{{ p.name | urlencode }}">{{ p.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

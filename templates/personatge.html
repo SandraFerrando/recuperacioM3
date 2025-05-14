@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block titol %}{{ personatge.name }}{% endblock %}
+
+{% block contingut %}
+    <h1>{{ personatge.name }}</h1>
+
+    {% if personatge.image %}
+        <img src="{{ personatge.image }}" alt="Imatge de {{ personatge.name }}" width="200">
+    {% endif %}
+
+    <ul>
+        <li><strong>Actor:</strong> {{ personatge.actor or "Desconegut" }}</li>
+        <li><strong>Casa:</strong> {{ personatge.house or "No assignada" }}</li>
+        <li><strong>Ancestria:</strong> {{ personatge.ancestry or "Desconeguda" }}</li>
+        <li><strong>Data de naixement:</strong> {{ personatge.dateOfBirth or "No disponible" }}</li>
+        <li><strong>Patronus:</strong> {{ personatge.patronus or "Cap" }}</li>
+    </ul>
+
+    <p><a href="/">⬅️ Tornar als personatges</a></p>
+{% endblock %}
